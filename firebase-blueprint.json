@@ -1,0 +1,237 @@
+{
+  "entities": {
+    "SchoolProfile": {
+      "title": "SchoolProfile",
+      "description": "School institution profile, branding, and contact details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "eiin": { "type": "string" },
+        "establishedYear": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "addressBn": { "type": "string" },
+        "logoUrl": { "type": "string" }
+      },
+      "required": ["id", "nameBn", "nameEn"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student bio, academic class, roll, and guardian info",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentId": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "className": { "type": "string" },
+        "section": { "type": "string" },
+        "roll": { "type": "string" },
+        "shift": { "type": "string" },
+        "group": { "type": "string" },
+        "fatherNameBn": { "type": "string" },
+        "motherNameBn": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "studentId", "nameEn", "className", "roll"]
+    },
+    "Staff": {
+      "title": "Staff",
+      "description": "Teachers, administrators, and general staff records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "staffId": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "designation": { "type": "string" },
+        "department": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "staffId", "nameEn", "designation"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "Daily attendance record for student or staff",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "studentId": { "type": "string" },
+        "status": { "type": "string" },
+        "method": { "type": "string" }
+      },
+      "required": ["id", "date", "status"]
+    },
+    "Exam": {
+      "title": "Exam",
+      "description": "School semester or term examination",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "term": { "type": "string" },
+        "session": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "nameEn"]
+    },
+    "MarksEntry": {
+      "title": "MarksEntry",
+      "description": "Exam marks entry for a student in a specific subject",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "examId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "written": { "type": "number" },
+        "mcq": { "type": "number" },
+        "practical": { "type": "number" },
+        "total": { "type": "number" },
+        "grade": { "type": "string" },
+        "gpa": { "type": "number" }
+      },
+      "required": ["id", "examId", "studentId", "subjectId"]
+    },
+    "Homework": {
+      "title": "Homework",
+      "description": "Teacher homework assignment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "className": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "title", "className", "dueDate"]
+    },
+    "HomeworkSubmission": {
+      "title": "HomeworkSubmission",
+      "description": "Student homework submission and grading",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "homeworkId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "submissionDate": { "type": "string" },
+        "status": { "type": "string" },
+        "teacherMarks": { "type": "number" }
+      },
+      "required": ["id", "homeworkId", "studentId"]
+    },
+    "FeeInvoice": {
+      "title": "FeeInvoice",
+      "description": "Fee billing invoice issued to student",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "invoiceNo": { "type": "string" },
+        "studentId": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "paidAmount": { "type": "number" },
+        "dueAmount": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "invoiceNo", "studentId", "totalAmount"]
+    },
+    "FeePayment": {
+      "title": "FeePayment",
+      "description": "Payment receipt collected for student fees",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "invoiceId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "studentId", "amount", "date"]
+    },
+    "Notice": {
+      "title": "Notice",
+      "description": "School noticeboard announcement",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "targetAudience": { "type": "string" }
+      },
+      "required": ["id", "title", "content", "date"]
+    },
+    "GlobalConfig": {
+      "title": "GlobalConfig",
+      "description": "School ERP global configurations and collections snapshot",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "data": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  },
+  "firestore": {
+    "/schools/{schoolId}": {
+      "schema": "SchoolProfile",
+      "description": "School institutional profile"
+    },
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Enrolled student records"
+    },
+    "/staff/{staffId}": {
+      "schema": "Staff",
+      "description": "Faculty and staff members"
+    },
+    "/attendance/{attendanceId}": {
+      "schema": "AttendanceRecord",
+      "description": "Daily attendance entries"
+    },
+    "/exams/{examId}": {
+      "schema": "Exam",
+      "description": "Examination terms"
+    },
+    "/marks/{markId}": {
+      "schema": "MarksEntry",
+      "description": "Academic examination marks"
+    },
+    "/homework/{homeworkId}": {
+      "schema": "Homework",
+      "description": "Homework assignments"
+    },
+    "/homework_submissions/{submissionId}": {
+      "schema": "HomeworkSubmission",
+      "description": "Student homework uploads"
+    },
+    "/feeInvoices/{invoiceId}": {
+      "schema": "FeeInvoice",
+      "description": "Fee invoices"
+    },
+    "/feePayments/{paymentId}": {
+      "schema": "FeePayment",
+      "description": "Fee transaction receipts"
+    },
+    "/notices/{noticeId}": {
+      "schema": "Notice",
+      "description": "School notice board"
+    },
+    "/config/{configId}": {
+      "schema": "GlobalConfig",
+      "description": "Global school data and configuration stores"
+    }
+  }
+}

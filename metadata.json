@@ -1,0 +1,6 @@
+{
+  "name": "SmartSchool BD - School ERP & Gate Attendance Kiosk",
+  "description": "Comprehensive School Management ERP with QR & Biometric Gate Attendance Kiosk, 14x11 Institutional Certificates, and Smart English ID Cards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

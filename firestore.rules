@@ -1,0 +1,107 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Test connection endpoint
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // School Profile & Branding
+    match /schools/{schoolId} {
+      allow read, write: if true;
+    }
+
+    // School Global Settings & Rules
+    match /school_settings/{settingId} {
+      allow read, write: if true;
+    }
+
+    // Realtime Global Sync Store & Snapshots
+    match /school_sync/{syncId} {
+      allow read, write: if true;
+    }
+
+    // Config collections (class fees, transport, routine)
+    match /config/{configId} {
+      allow read, write: if true;
+    }
+
+    // Students Directory
+    match /students/{studentId} {
+      allow read, write: if true;
+    }
+
+    // Staff & Faculty Directory
+    match /staff/{staffId} {
+      allow read, write: if true;
+    }
+
+    // Homework Assignments & Tasks
+    match /homework/{homeworkId} {
+      allow read, write: if true;
+    }
+
+    // Homework Submissions
+    match /homework_submissions/{submissionId} {
+      allow read, write: if true;
+    }
+
+    // Student & Staff Attendance Records
+    match /attendance/{attendanceId} {
+      allow read, write: if true;
+    }
+
+    // Attendance Audit Logs & QR Scans
+    match /attendance_audit_logs/{logId} {
+      allow read, write: if true;
+    }
+
+    // Student Performance Analytics
+    match /student_performance/{analyticsId} {
+      allow read, write: if true;
+    }
+
+    // Examinations & Schedules
+    match /exams/{examId} {
+      allow read, write: if true;
+    }
+
+    // Academic Subject Marks Breakdown
+    match /marks/{markId} {
+      allow read, write: if true;
+    }
+
+    // Fees, Invoices & Accounts
+    match /feeInvoices/{invoiceId} {
+      allow read, write: if true;
+    }
+
+    match /feePayments/{paymentId} {
+      allow read, write: if true;
+    }
+
+    match /feeHeads/{headId} {
+      allow read, write: if true;
+    }
+
+    match /expenses/{expenseId} {
+      allow read, write: if true;
+    }
+
+    // Notices & Circulars
+    match /notices/{noticeId} {
+      allow read, write: if true;
+    }
+
+    // Blog & Public Portal Articles
+    match /blog_posts/{postId} {
+      allow read, write: if true;
+    }
+
+    // Online Payments & Requests
+    match /online_payments/{paymentId} {
+      allow read, write: if true;
+    }
+  }
+}
